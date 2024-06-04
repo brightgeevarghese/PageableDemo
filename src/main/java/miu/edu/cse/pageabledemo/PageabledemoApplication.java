@@ -1,6 +1,7 @@
 package miu.edu.cse.pageabledemo;
 
 import lombok.RequiredArgsConstructor;
+import miu.edu.cse.pageabledemo.dto.BookDto;
 import miu.edu.cse.pageabledemo.model.Book;
 import miu.edu.cse.pageabledemo.service.BookService;
 import org.springframework.boot.CommandLineRunner;
@@ -25,22 +26,22 @@ public class PageabledemoApplication {
     @Bean
     CommandLineRunner commandLineRunner() {
         return args -> {
-            Book b1 = new Book("Book A",
+            BookDto b1 = new BookDto("Book A",
                     BigDecimal.valueOf(9.99),
                     LocalDate.of(2023, 8, 31));
-            Book b2 = new Book("Book B",
+            BookDto b2 = new BookDto("Book B",
                     BigDecimal.valueOf(19.99),
                     LocalDate.of(2023, 7, 31));
-            Book b3 = new Book("Book C",
+            BookDto b3 = new BookDto("Book C",
                     BigDecimal.valueOf(29.99),
                     LocalDate.of(2023, 6, 10));
-            Book b4 = new Book("Book D",
+            BookDto b4 = new BookDto("Book D",
                     BigDecimal.valueOf(39.99),
                     LocalDate.of(2023, 5, 5));
-            Book b5 = new Book("Book E",
+            BookDto b5 = new BookDto("Book E",
                     BigDecimal.valueOf(49.99),
                     LocalDate.of(2023, 4, 1));
-            Book b6 = new Book("Book F",
+            BookDto b6 = new BookDto("Book F",
                     BigDecimal.valueOf(59.99),
                     LocalDate.of(2023, 3, 1));
             bookService.addAllBooks(List.of(b1, b2, b3, b4, b5, b6));
